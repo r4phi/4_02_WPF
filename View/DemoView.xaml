@@ -7,6 +7,92 @@
         mc:Ignorable="d"
         Title="DemoView" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <ListBox>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/icon.png" Stretch="Fill"></Image>
+                        <TextBlock>Schüler 1</TextBlock>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/icon.png" Stretch="Fill"></Image>
+                        <TextBlock>Schüler 2</TextBlock>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/View/icon.png" Stretch="Fill"></Image>
+                        <TextBlock>Schüler 3</TextBlock>
+                    </StackPanel>
+                </ListBoxItem>
+            </ListBox>
+            <Button>
+                Füllen
+            </Button>
+            <Button>
+                Löschen
+            </Button>
+        </StackPanel>
+
+        <DockPanel Grid.Row="0" Grid.Column="1">
+            <TreeView>
+                <TreeViewItem Header="Root">
+                    <TreeViewItem Header="Item 1"></TreeViewItem>
+                    <TreeViewItem Header="Item 2"></TreeViewItem>
+                </TreeViewItem>
+            </TreeView>
+            <Button>Füllen</Button>
+            <Button>Löschen</Button>
+        </DockPanel>
+
+        <TabControl Grid.Row="1" Grid.Column="0" TabStripPlacement="Left">
+            <TabItem Header="All Fonts">
+                <ComboBox></ComboBox>
+            </TabItem>
+            <TabItem Header="CheckBoxes">
+                <ComboBox>
+                    <ComboBoxItem>
+                        <CheckBox>Checkbox 1</CheckBox>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <CheckBox>Checkbox 2</CheckBox>
+                    </ComboBoxItem>
+                </ComboBox>
+            </TabItem>
+            <TabItem Header="Graphic Element">
+                <Button>
+                    <Image Source="/View/grafik.jpg" Stretch="Fill" HorizontalAlignment="Stretch"/>
+                </Button>
+            </TabItem>
+        </TabControl>
+
+        <Border Grid.Column="1" Grid.Row="1" CornerRadius="20" BorderBrush="Black" BorderThickness="2">
+            <StackPanel Margin="5">
+                <Expander Header="Auswahl 1">
+                    <StackPanel>
+                        <Label>Label</Label>
+                        <TextBox></TextBox>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="Auswahl 2">
+                    <StackPanel>
+                        <PasswordBox></PasswordBox>
+                        <ProgressBar Minimum="0" Maximum="100" Value="75" Height="10"></ProgressBar>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

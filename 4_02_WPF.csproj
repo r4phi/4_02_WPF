@@ -7,4 +7,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="View\grafik.jpg" />
+    <None Remove="View\icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\grafik.jpg" />
+    <Resource Include="View\icon.png" />
+  </ItemGroup>
+
 </Project>
