@@ -18,51 +18,47 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="0" Grid.Column="0">
-            <ListBox>
-                <ListBoxItem>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/View/icon.png" Stretch="Fill"></Image>
-                        <TextBlock>Schüler 1</TextBlock>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/View/icon.png" Stretch="Fill"></Image>
-                        <TextBlock>Schüler 2</TextBlock>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/View/icon.png" Stretch="Fill"></Image>
-                        <TextBlock>Schüler 3</TextBlock>
-                    </StackPanel>
-                </ListBoxItem>
+            <ListBox Name="SchuelerListBox">
             </ListBox>
-            <Button>
+            <Button Click="FillListBox">
                 Füllen
             </Button>
-            <Button>
+            <Button Click="DeleteListBoxItems">
                 Löschen
             </Button>
         </StackPanel>
 
         <DockPanel Grid.Row="0" Grid.Column="1">
-            <TreeView>
-                <TreeViewItem Header="Root">
-                    <TreeViewItem Header="Item 1"></TreeViewItem>
-                    <TreeViewItem Header="Item 2"></TreeViewItem>
+            <TreeView Name="Tree">
+                <TreeViewItem Header="Root" Name="Root">
                 </TreeViewItem>
             </TreeView>
-            <Button>Füllen</Button>
-            <Button>Löschen</Button>
+            <Button Click="FillTree">Füllen</Button>
+            <Button Click="DeleteTreeItems">Löschen</Button>
         </DockPanel>
 
         <TabControl Grid.Row="1" Grid.Column="0" TabStripPlacement="Left">
+            <TabControl.Resources>
+                <Style TargetType="{x:Type TabItem}">
+                    <Setter Property="HeaderTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <ContentPresenter Content="{TemplateBinding Content}">
+                                    <ContentPresenter.LayoutTransform>
+                                        <RotateTransform Angle="270" />
+                                    </ContentPresenter.LayoutTransform>
+                                </ContentPresenter>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Padding" Value="3" />
+                </Style>
+            </TabControl.Resources>
             <TabItem Header="All Fonts">
-                <ComboBox></ComboBox>
+                <ComboBox Height="40" VerticalAlignment="Top" Name="AllFontsComboBox"></ComboBox>
             </TabItem>
             <TabItem Header="CheckBoxes">
-                <ComboBox>
+                <ComboBox Height="40" VerticalAlignment="Top">
                     <ComboBoxItem>
                         <CheckBox>Checkbox 1</CheckBox>
                     </ComboBoxItem>

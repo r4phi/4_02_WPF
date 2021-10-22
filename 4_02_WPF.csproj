@@ -10,11 +10,13 @@
   <ItemGroup>
     <None Remove="View\grafik.jpg" />
     <None Remove="View\icon.png" />
+    <None Remove="View\imposter.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="View\grafik.jpg" />
     <Resource Include="View\icon.png" />
+    <Resource Include="View\imposter.png" />
   </ItemGroup>
 
 </Project>
